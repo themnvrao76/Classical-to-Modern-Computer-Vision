@@ -12,3 +12,4 @@
 | ResNeXt-50 32x4d | 2017 | 25,028,904 | [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431) | [models/resnext50.py](models/resnext50.py) |
 | DenseNet-121 | 2017 | 7,978,856 | [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) | [models/densenet121.py](models/densenet121.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [models/mobilenet_v2.py](models/mobilenet_v2.py) |
+| EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [models/efficientnet_b0.py](models/efficientnet_b0.py) |
