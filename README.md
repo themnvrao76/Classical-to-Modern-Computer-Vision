@@ -13,3 +13,4 @@
 | DenseNet-121 | 2017 | 7,978,856 | [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) | [models/densenet121.py](models/densenet121.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [models/mobilenet_v2.py](models/mobilenet_v2.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [models/efficientnet_b0.py](models/efficientnet_b0.py) |
+| ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [models/vit_b16.py](models/vit_b16.py) |
