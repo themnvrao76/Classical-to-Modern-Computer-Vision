@@ -35,18 +35,22 @@ The goal is to keep the implementations readable and close to the architectural 
 
 ## Architecture Evolution
 
-```mermaid
-flowchart LR
-    A[LeNet-5] --> B[AlexNet]
-    B --> C[VGG / Inception]
-    C --> D[ResNet / ResNeXt / DenseNet]
-    D --> E[MobileNet / EfficientNet]
-    E --> F[Vision Transformer]
-    F --> G[DeiT / Modern Transformers]
-    G --> H[Detection & Segmentation]
-    H --> I[Self-Supervised & Multimodal]
-    I --> J[3D & Human-Centric Vision]
-```
+<p align="center">
+  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT → Detection & Segmentation → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+</p>
+
+| Era | Representative Models | Main Idea |
+|---|---|---|
+| Classical CNNs | LeNet-5, AlexNet | Learned hierarchical visual features |
+| Deep CNNs | VGG, GoogLeNet | Depth and multi-scale feature extraction |
+| Residual Networks | ResNet, ResNeXt, DenseNet | Skip connections and feature reuse |
+| Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
+| Vision Transformers | ViT, DeiT | Patch-based global self-attention |
+| Dense Prediction | FCN, U-Net, DeepLab | Segmentation and pixel-level understanding |
+| Object Detection | Faster R-CNN, YOLO, DETR | Localization and recognition |
+| Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
+| Multimodal Vision | CLIP-style models | Joint image-text representations |
+| 3D & Human Vision | PointNet, HRNet, pose/mesh models | Geometry and human-centric understanding |
 
 ---
 
