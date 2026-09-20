@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-14-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-15-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -19,7 +19,7 @@ This repository is a growing collection of **computer vision architectures imple
 
 The goal is to keep the implementations readable and close to the architectural ideas introduced in the original papers while building a practical reference for studying the evolution of computer vision.
 
-**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers  
+**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones  
 **Planned coverage:** object detection · semantic segmentation · pose estimation · self-supervised learning · vision-language models · generative vision · optical flow · tracking · 3D vision
 
 ### Why this repository?
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → Detection & Segmentation → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Detection & Segmentation → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -46,6 +46,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Residual Networks | ResNet, ResNeXt, DenseNet | Skip connections and feature reuse |
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
 | Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
+| Modern ConvNets | ConvNeXt | Transformer-era design principles applied to convolutional networks |
 | Dense Prediction | FCN, U-Net, DeepLab | Segmentation and pixel-level understanding |
 | Object Detection | Faster R-CNN, YOLO, DETR | Localization and recognition |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
@@ -72,6 +73,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
+| ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
 
 ---
 
@@ -93,7 +95,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/swin_t.py
+python models/convnext_tiny.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -104,7 +106,7 @@ Each model file includes a small runnable check so the architecture can be insta
 
 The repository is expanding beyond image classification into the major branches of modern computer vision:
 
-- **Modern backbones:** ConvNeXt, MobileNetV3, SENet, Xception, ShuffleNet, RegNet
+- **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
 - **Semantic segmentation:** FCN, U-Net, SegNet, PSPNet, DeepLabV3, DeepLabV3+
 - **Object detection:** Faster R-CNN, SSD, RetinaNet, YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
