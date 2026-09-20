@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-13-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-14-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT → Detection & Segmentation → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → Detection & Segmentation → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -45,7 +45,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Deep CNNs | VGG, GoogLeNet | Depth and multi-scale feature extraction |
 | Residual Networks | ResNet, ResNeXt, DenseNet | Skip connections and feature reuse |
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
-| Vision Transformers | ViT, DeiT | Patch-based global self-attention |
+| Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
 | Dense Prediction | FCN, U-Net, DeepLab | Segmentation and pixel-level understanding |
 | Object Detection | Faster R-CNN, YOLO, DETR | Localization and recognition |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
@@ -71,6 +71,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
+| Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
 
 ---
 
@@ -92,7 +93,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/resnet50.py
+python models/swin_t.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -103,7 +104,7 @@ Each model file includes a small runnable check so the architecture can be insta
 
 The repository is expanding beyond image classification into the major branches of modern computer vision:
 
-- **Modern backbones:** Swin Transformer, ConvNeXt, MobileNetV3, SENet, Xception, ShuffleNet, RegNet
+- **Modern backbones:** ConvNeXt, MobileNetV3, SENet, Xception, ShuffleNet, RegNet
 - **Semantic segmentation:** FCN, U-Net, SegNet, PSPNet, DeepLabV3, DeepLabV3+
 - **Object detection:** Faster R-CNN, SSD, RetinaNet, YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
