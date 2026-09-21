@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-16-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-17-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,18 +36,18 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → FCN & Dense Prediction → Detection → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Detection → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
 |---|---|---|
 | Classical CNNs | LeNet-5, AlexNet | Learned hierarchical visual features |
 | Deep CNNs | VGG, GoogLeNet | Depth and multi-scale feature extraction |
+| Dense Prediction | FCN, U-Net, DeepLab | Segmentation, encoder-decoder paths, skip fusion, and pixel-level understanding |
 | Residual Networks | ResNet, ResNeXt, DenseNet | Skip connections and feature reuse |
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
 | Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
 | Modern ConvNets | ConvNeXt | Transformer-era design principles applied to convolutional networks |
-| Dense Prediction | FCN, U-Net, DeepLab | Segmentation and pixel-level understanding |
 | Object Detection | Faster R-CNN, YOLO, DETR | Localization and recognition |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
 | Multimodal Vision | CLIP-style models | Joint image-text representations |
@@ -64,6 +64,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | VGG-16 | 2014 | 138,357,544 | [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556) | [`models/vgg16.py`](models/vgg16.py) |
 | GoogLeNet / Inception v1 | 2014 | 6,991,272 | [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842) | [`models/googlenet.py`](models/googlenet.py) |
 | FCN-8s | 2015 | 134,362,751 | [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1411.4038) | [`models/fcn8s.py`](models/fcn8s.py) |
+| U-Net | 2015 | 31,031,810 | [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597) | [`models/unet.py`](models/unet.py) |
 | ResNet-18 | 2015 | 11,689,512 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet18.py`](models/resnet18.py) |
 | ResNet-50 | 2015 | 25,557,032 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet50.py`](models/resnet50.py) |
 | MobileNet v1 | 2017 | 4,231,976 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861) | [`models/mobilenet_v1.py`](models/mobilenet_v1.py) |
@@ -96,7 +97,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/fcn8s.py
+python models/unet.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -108,7 +109,7 @@ Each model file includes a small runnable check so the architecture can be insta
 The repository is expanding beyond image classification into the major branches of modern computer vision:
 
 - **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
-- **Semantic segmentation:** U-Net, SegNet, PSPNet, DeepLabV3, DeepLabV3+
+- **Semantic segmentation:** SegNet, PSPNet, DeepLabV3, DeepLabV3+
 - **Object detection:** Faster R-CNN, SSD, RetinaNet, YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
 - **Self-supervised learning:** SimCLR, MoCo, BYOL, DINO
