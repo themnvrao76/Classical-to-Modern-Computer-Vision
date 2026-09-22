@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-17-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-18-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,14 +36,14 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Detection → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → DeepLabV3 → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Detection → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
 |---|---|---|
 | Classical CNNs | LeNet-5, AlexNet | Learned hierarchical visual features |
 | Deep CNNs | VGG, GoogLeNet | Depth and multi-scale feature extraction |
-| Dense Prediction | FCN, U-Net, DeepLab | Segmentation, encoder-decoder paths, skip fusion, and pixel-level understanding |
+| Dense Prediction | FCN, U-Net, DeepLabV3 | Segmentation, encoder-decoder paths, skip fusion, atrous convolution, and multi-scale context |
 | Residual Networks | ResNet, ResNeXt, DenseNet | Skip connections and feature reuse |
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
 | Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
@@ -70,6 +70,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | MobileNet v1 | 2017 | 4,231,976 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861) | [`models/mobilenet_v1.py`](models/mobilenet_v1.py) |
 | ResNeXt-50 32x4d | 2017 | 25,028,904 | [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431) | [`models/resnext50.py`](models/resnext50.py) |
 | DenseNet-121 | 2017 | 7,978,856 | [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) | [`models/densenet121.py`](models/densenet121.py) |
+| DeepLabV3 (ResNet-50) | 2017 | 42,004,074 | [Rethinking Atrous Convolution for Semantic Image Segmentation](https://arxiv.org/abs/1706.05587) | [`models/deeplabv3.py`](models/deeplabv3.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [`models/mobilenet_v2.py`](models/mobilenet_v2.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
@@ -97,7 +98,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/unet.py
+python models/deeplabv3.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -109,7 +110,7 @@ Each model file includes a small runnable check so the architecture can be insta
 The repository is expanding beyond image classification into the major branches of modern computer vision:
 
 - **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
-- **Semantic segmentation:** SegNet, PSPNet, DeepLabV3, DeepLabV3+
+- **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
 - **Object detection:** Faster R-CNN, SSD, RetinaNet, YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
 - **Self-supervised learning:** SimCLR, MoCo, BYOL, DINO
