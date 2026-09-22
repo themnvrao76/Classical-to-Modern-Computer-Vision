@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-18-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-19-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -19,8 +19,8 @@ This repository is a growing collection of **computer vision architectures imple
 
 The goal is to keep the implementations readable and close to the architectural ideas introduced in the original papers while building a practical reference for studying the evolution of computer vision.
 
-**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation  
-**Planned coverage:** object detection · pose estimation · self-supervised learning · vision-language models · generative vision · optical flow · tracking · 3D vision
+**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object detection  
+**Planned coverage:** pose estimation · self-supervised learning · vision-language models · generative vision · optical flow · tracking · 3D vision
 
 ### Why this repository?
 
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → DeepLabV3 → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Detection → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN → DeepLabV3 → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -48,7 +48,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
 | Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
 | Modern ConvNets | ConvNeXt | Transformer-era design principles applied to convolutional networks |
-| Object Detection | Faster R-CNN, YOLO, DETR | Localization and recognition |
+| Object Detection | Faster R-CNN, YOLO, DETR | Region proposals, localization, and recognition |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
 | Multimodal Vision | CLIP-style models | Joint image-text representations |
 | 3D & Human Vision | PointNet, HRNet, pose/mesh models | Geometry and human-centric understanding |
@@ -67,6 +67,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | U-Net | 2015 | 31,031,810 | [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597) | [`models/unet.py`](models/unet.py) |
 | ResNet-18 | 2015 | 11,689,512 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet18.py`](models/resnet18.py) |
 | ResNet-50 | 2015 | 25,557,032 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet50.py`](models/resnet50.py) |
+| Faster R-CNN (ResNet-C4) | 2015 | 65,823,958 | [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497) | [`models/faster_rcnn.py`](models/faster_rcnn.py) |
 | MobileNet v1 | 2017 | 4,231,976 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861) | [`models/mobilenet_v1.py`](models/mobilenet_v1.py) |
 | ResNeXt-50 32x4d | 2017 | 25,028,904 | [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431) | [`models/resnext50.py`](models/resnext50.py) |
 | DenseNet-121 | 2017 | 7,978,856 | [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) | [`models/densenet121.py`](models/densenet121.py) |
@@ -98,7 +99,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/deeplabv3.py
+python models/faster_rcnn.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -111,7 +112,7 @@ The repository is expanding beyond image classification into the major branches 
 
 - **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
 - **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
-- **Object detection:** Faster R-CNN, SSD, RetinaNet, YOLO, DETR, Mask R-CNN
+- **Object detection:** SSD, RetinaNet, YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
 - **Self-supervised learning:** SimCLR, MoCo, BYOL, DINO
 - **Vision-language learning:** CLIP-style image-text representation learning and multimodal vision
