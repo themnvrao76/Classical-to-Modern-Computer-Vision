@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-20-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-21-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD → DeepLabV3 → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / RetinaNet → DeepLabV3 → MobileNet / EfficientNet → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -48,7 +48,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Efficient Vision | MobileNet, EfficientNet | Lightweight and scalable architectures |
 | Vision Transformers | ViT, DeiT, Swin Transformer | Patch-based attention and hierarchical shifted windows |
 | Modern ConvNets | ConvNeXt | Transformer-era design principles applied to convolutional networks |
-| Object Detection | Faster R-CNN, SSD, YOLO, DETR | Region proposals and direct multi-scale one-stage detection |
+| Object Detection | Faster R-CNN, SSD, RetinaNet, YOLO, DETR | Region proposals, one-stage multi-scale detection, and focal loss for dense class imbalance |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Self-supervised visual representations |
 | Multimodal Vision | CLIP-style models | Joint image-text representations |
 | 3D & Human Vision | PointNet, HRNet, pose/mesh models | Geometry and human-centric understanding |
@@ -73,6 +73,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | ResNeXt-50 32x4d | 2017 | 25,028,904 | [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/abs/1611.05431) | [`models/resnext50.py`](models/resnext50.py) |
 | DenseNet-121 | 2017 | 7,978,856 | [Densely Connected Convolutional Networks](https://arxiv.org/abs/1608.06993) | [`models/densenet121.py`](models/densenet121.py) |
 | DeepLabV3 (ResNet-50) | 2017 | 42,004,074 | [Rethinking Atrous Convolution for Semantic Image Segmentation](https://arxiv.org/abs/1706.05587) | [`models/deeplabv3.py`](models/deeplabv3.py) |
+| RetinaNet (ResNet-50 FPN) | 2017 | 37,968,692 | [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002) | [`models/retinanet.py`](models/retinanet.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [`models/mobilenet_v2.py`](models/mobilenet_v2.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
@@ -100,7 +101,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/ssd300.py
+python models/retinanet.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -113,7 +114,7 @@ The repository is expanding beyond image classification into the major branches 
 
 - **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
 - **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
-- **Object detection:** RetinaNet, YOLO, DETR, Mask R-CNN
+- **Object detection:** YOLO, DETR, Mask R-CNN
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
 - **Self-supervised learning:** SimCLR, MoCo, BYOL, DINO
 - **Vision-language learning:** CLIP-style image-text representation learning and multimodal vision
