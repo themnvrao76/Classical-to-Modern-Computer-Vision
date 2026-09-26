@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-25-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-26-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -78,7 +78,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Mask R-CNN (ResNet-50 FPN) | 2017 | 44,400,693 | [Mask R-CNN](https://arxiv.org/abs/1703.06870) | [`models/mask_rcnn.py`](models/mask_rcnn.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [`models/mobilenet_v2.py`](models/mobilenet_v2.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
-| DETR (ResNet-50) | 2020 | 41,577,376 | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [`models/detr.py`](models/detr.py) |\n| SimCLR (ResNet-50) | 2020 | 27,968,704 | [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) | [`models/simclr.py`](models/simclr.py) |\n| ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
+| DETR (ResNet-50) | 2020 | 41,577,376 | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [`models/detr.py`](models/detr.py) |\n| SimCLR (ResNet-50) | 2020 | 27,968,704 | [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) | [`models/simclr.py`](models/simclr.py) |\n| MoCo (ResNet-50) | 2020 | 47,540,608 | [Momentum Contrast for Unsupervised Visual Representation Learning](https://arxiv.org/abs/1911.05722) | [`models/moco.py`](models/moco.py) |\n| ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
 | ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
@@ -103,7 +103,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/simclr.py
+python models/moco.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -118,7 +118,7 @@ The repository is expanding beyond image classification into the major branches 
 - **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
 - **Object detection:** later YOLO generations and modern DETR variants
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
-- **Self-supervised learning:** MoCo, BYOL, DINO
+- **Self-supervised learning:** BYOL, DINO
 - **Vision-language learning:** CLIP-style image-text representation learning and multimodal vision
 - **Generative vision:** Autoencoders, VAE, DCGAN, Pix2Pix, CycleGAN
 - **Video and motion:** optical flow, tracking, temporal vision models
