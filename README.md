@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-26-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-27-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo / BYOL → ViT / DeiT / Swin → ConvNeXt → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -103,7 +103,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/moco.py
+python models/byol.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -118,7 +118,7 @@ The repository is expanding beyond image classification into the major branches 
 - **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
 - **Object detection:** later YOLO generations and modern DETR variants
 - **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
-- **Self-supervised learning:** BYOL, DINO
+- **Self-supervised learning:** DINO and modern teacher-student representation learning
 - **Vision-language learning:** CLIP-style image-text representation learning and multimodal vision
 - **Generative vision:** Autoencoders, VAE, DCGAN, Pix2Pix, CycleGAN
 - **Video and motion:** optical flow, tracking, temporal vision models
