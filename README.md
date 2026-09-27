@@ -20,7 +20,7 @@ This repository is a growing collection of **computer vision architectures imple
 The goal is to keep the implementations readable and close to the architectural ideas introduced in the original papers while building a practical reference for studying the evolution of computer vision.
 
 **Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object detection · instance segmentation · transformer-based detection · self-supervised learning  
-**Planned coverage:** pose estimation · self-supervised learning · vision-language models · generative vision · optical flow · tracking · 3D vision
+**Planned coverage:** pose estimation · vision-language models · generative vision · optical flow · tracking · 3D vision
 
 ### Why this repository?
 
@@ -78,7 +78,9 @@ The goal is to keep the implementations readable and close to the architectural 
 | Mask R-CNN (ResNet-50 FPN) | 2017 | 44,400,693 | [Mask R-CNN](https://arxiv.org/abs/1703.06870) | [`models/mask_rcnn.py`](models/mask_rcnn.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [`models/mobilenet_v2.py`](models/mobilenet_v2.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
-| DETR (ResNet-50) | 2020 | 41,577,376 | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [`models/detr.py`](models/detr.py) |\n| SimCLR (ResNet-50) | 2020 | 27,968,704 | [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) | [`models/simclr.py`](models/simclr.py) |\n| MoCo (ResNet-50) | 2020 | 47,540,608 | [Momentum Contrast for Unsupervised Visual Representation Learning](https://arxiv.org/abs/1911.05722) | [`models/moco.py`](models/moco.py) |\n| ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
+| DETR (ResNet-50) | 2020 | 41,577,376 | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [`models/detr.py`](models/detr.py) |\n| SimCLR (ResNet-50) | 2020 | 27,968,704 | [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) | [`models/simclr.py`](models/simclr.py) |\n| MoCo (ResNet-50) | 2020 | 47,540,608 | [Momentum Contrast for Unsupervised Visual Representation Learning](https://arxiv.org/abs/1911.05722) | [`models/moco.py`](models/moco.py) |
+| BYOL (ResNet-50) | 2020 | 68,012,160 | [Bootstrap Your Own Latent](https://arxiv.org/abs/2006.07733) | [`models/byol.py`](models/byol.py) |
+| DINO (ViT-S/16) | 2021 | 79,642,880 | [Emerging Properties in Self-Supervised Vision Transformers](https://arxiv.org/abs/2104.14294) | [`models/dino.py`](models/dino.py) |\n| ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
 | ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
