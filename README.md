@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-29-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-30-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -19,8 +19,8 @@ This repository is a growing collection of **computer vision architectures imple
 
 The goal is to keep the implementations readable and close to the architectural ideas introduced in the original papers while building a practical reference for studying the evolution of computer vision.
 
-**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object detection · instance segmentation · transformer-based detection · self-supervised learning · vision-language learning  
-**Planned coverage:** pose estimation · generative vision · optical flow · tracking · 3D vision
+**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object detection · instance segmentation · transformer-based detection · self-supervised learning · vision-language learning · human pose estimation  
+**Planned coverage:** · generative vision · optical flow · tracking · 3D vision
 
 ### Why this repository?
 
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo / BYOL / DINO → ViT / DeiT / Swin → ConvNeXt → CLIP → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo / BYOL / DINO → ViT / DeiT / Swin → ConvNeXt → CLIP → HRNet → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -51,6 +51,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Object & Instance Detection | Faster R-CNN, SSD, YOLOv1, RetinaNet, Mask R-CNN, DETR | Region proposals, direct grid prediction, feature pyramids, focal loss, instance masks, and end-to-end set prediction with Transformers |
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Contrastive and self-supervised visual representations |
 | Multimodal Vision | CLIP-style models | Joint image-text representations |
+| Human Pose | HRNet-W32 | Parallel multi-resolution representations and heatmap-based keypoint estimation |
 | 3D & Human Vision | PointNet, HRNet, pose/mesh models | Geometry and human-centric understanding |
 
 ---
@@ -87,6 +88,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
+| HRNet-W32 Pose | 2019 | ~28.5M | [Deep High-Resolution Representation Learning for Visual Recognition](https://arxiv.org/abs/1908.07919) | [`models/hrnet_w32_pose.py`](models/hrnet_w32_pose.py) |
 | ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
 
 ---
@@ -109,7 +111,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/clip.py
+python models/hrnet_w32_pose.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -123,7 +125,7 @@ The repository is expanding beyond image classification into the major branches 
 - **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
 - **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
 - **Object detection:** later YOLO generations and modern DETR variants
-- **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
+- **Human pose:** SimpleBaseline, OpenPose-style methods, 3D human understanding
 - **Self-supervised learning:** DINOv2 and modern teacher-student representation learning
 - **Vision-language learning:** CLIP extensions, image-text pretraining, and multimodal vision
 - **Generative vision:** Autoencoders, VAE, DCGAN, Pix2Pix, CycleGAN
