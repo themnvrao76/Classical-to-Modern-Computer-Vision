@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-31-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-32-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -36,7 +36,7 @@ The goal is to keep the implementations readable and close to the architectural 
 ## Architecture Evolution
 
 <p align="center">
-  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo / BYOL / DINO → ViT / DeiT / Swin → ConvNeXt → CLIP → HRNet → PointNet → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
+  <strong>LeNet-5 → AlexNet → VGG / Inception → FCN / U-Net → ResNet / ResNeXt / DenseNet → Faster R-CNN / SSD / YOLO / RetinaNet / Mask R-CNN → DeepLabV3 → DETR → MobileNet / EfficientNet → SimCLR / MoCo / BYOL / DINO → ViT / DeiT / Swin → ConvNeXt → CLIP → HRNet → PointNet → PointNet++ → Self-Supervised & Multimodal → 3D & Human-Centric Vision</strong>
 </p>
 
 | Era | Representative Models | Main Idea |
@@ -52,7 +52,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | Representation Learning | SimCLR, MoCo, BYOL, DINO | Contrastive and self-supervised visual representations |
 | Multimodal Vision | CLIP-style models | Joint image-text representations |
 | Human Pose | HRNet-W32 | Parallel multi-resolution representations and heatmap-based keypoint estimation |
-| 3D & Human Vision | PointNet, HRNet, pose/mesh models | Point-set learning, geometry, and human-centric understanding |
+| 3D & Human Vision | PointNet, PointNet++, HRNet, pose/mesh models | Point-set learning, hierarchical local geometry, and human-centric understanding |
 
 ---
 
@@ -89,7 +89,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
 | HRNet-W32 Pose | 2019 | ~28.5M | [Deep High-Resolution Representation Learning for Visual Recognition](https://arxiv.org/abs/1908.07919) | [`models/hrnet_w32_pose.py`](models/hrnet_w32_pose.py) |
-| PointNet | 2017 | 3,480,049 | [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593) | [`models/pointnet.py`](models/pointnet.py) |
+| PointNet | 2017 | 3,480,049 | [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593) | [`models/pointnet.py`](models/pointnet.py) |\n| PointNet++ SSG | 2017 | 1,472,552 | [PointNet++: Deep Hierarchical Feature Learning on Point Sets in a Metric Space](https://arxiv.org/abs/1706.02413) | [`models/pointnet2_ssg.py`](models/pointnet2_ssg.py) |
 | ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
 
 ---
@@ -112,7 +112,7 @@ pip install torch torchvision
 Run an implementation directly:
 
 ```bash
-python models/pointnet.py
+python models/pointnet2_ssg.py
 ```
 
 Each model file includes a small runnable check so the architecture can be instantiated and its output shape or parameter count verified.
@@ -131,7 +131,7 @@ The repository is expanding beyond image classification into the major branches 
 - **Vision-language learning:** CLIP extensions, image-text pretraining, and multimodal vision
 - **Generative vision:** Autoencoders, VAE, DCGAN, Pix2Pix, CycleGAN
 - **Video and motion:** optical flow, tracking, temporal vision models
-- **3D vision:** PointNet++, depth, geometry, and human-centric 3D vision
+- **3D vision:** depth estimation, multi-view geometry, neural rendering, and human-centric 3D vision
 
 ---
 
