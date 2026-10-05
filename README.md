@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/PyTorch-Computer%20Vision-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Models-23-blue" alt="Models">
+  <img src="https://img.shields.io/badge/Models-36-blue" alt="Models">
   <img src="https://img.shields.io/badge/Papers-Original%20Sources-success" alt="Original Papers">
   <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen" alt="Active Development">
 </p>
@@ -19,8 +19,8 @@ This repository is a growing collection of **computer vision architectures imple
 
 The goal is to keep the implementations readable and close to the architectural ideas introduced in the original papers while building a practical reference for studying the evolution of computer vision.
 
-**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object detection · instance segmentation  
-**Planned coverage:** pose estimation · self-supervised learning · vision-language models · generative vision · optical flow · tracking · 3D vision
+**Current coverage:** CNNs · residual networks · efficient/mobile vision · vision transformers · modern ConvNet backbones · semantic segmentation · object/instance detection · pose estimation · metric learning · self-supervised learning · vision-language learning · 3D vision  
+**Planned coverage:** generative vision · optical flow · tracking · deeper human-mesh and 3D reconstruction methods
 
 ### Why this repository?
 
@@ -59,6 +59,7 @@ The goal is to keep the implementations readable and close to the architectural 
 
 | Model | Year | Parameters | Original Paper | PyTorch Implementation |
 |---|---:|---:|---|---|
+| Siamese Network | 1993 | Config-dependent | [Signature Verification using a Siamese Time Delay Neural Network](https://papers.nips.cc/paper/1993/hash/288cc0ff022877bd3df94bc9360b9c5d-Abstract.html) | [`models/siamese_network.py`](models/siamese_network.py) |
 | LeNet-5 | 1998 | 44,426 | [Gradient-Based Learning Applied to Document Recognition](https://doi.org/10.1109/5.726791) | [`models/lenet.py`](models/lenet.py) |
 | AlexNet | 2012 | 61,100,840 | [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html) | [`models/alexnet.py`](models/alexnet.py) |
 | VGG-16 | 2014 | 138,357,544 | [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/abs/1409.1556) | [`models/vgg16.py`](models/vgg16.py) |
@@ -68,6 +69,7 @@ The goal is to keep the implementations readable and close to the architectural 
 | ResNet-18 | 2015 | 11,689,512 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet18.py`](models/resnet18.py) |
 | ResNet-50 | 2015 | 25,557,032 | [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385) | [`models/resnet50.py`](models/resnet50.py) |
 | Faster R-CNN (ResNet-C4) | 2015 | 65,823,958 | [Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks](https://arxiv.org/abs/1506.01497) | [`models/faster_rcnn.py`](models/faster_rcnn.py) |
+| Triplet Metric Learning | 2015 | Config-dependent | [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/abs/1503.03832) | [`models/triplet_network.py`](models/triplet_network.py) |
 | SSD300 (VGG-16) | 2016 | 26,285,486 | [SSD: Single Shot MultiBox Detector](https://arxiv.org/abs/1512.02325) | [`models/ssd300.py`](models/ssd300.py) |
 | YOLOv1 | 2016 | 271,703,550 | [You Only Look Once: Unified, Real-Time Object Detection](https://arxiv.org/abs/1506.02640) | [`models/yolov1.py`](models/yolov1.py) |
 | MobileNet v1 | 2017 | 4,231,976 | [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861) | [`models/mobilenet_v1.py`](models/mobilenet_v1.py) |
@@ -76,11 +78,22 @@ The goal is to keep the implementations readable and close to the architectural 
 | DeepLabV3 (ResNet-50) | 2017 | 42,004,074 | [Rethinking Atrous Convolution for Semantic Image Segmentation](https://arxiv.org/abs/1706.05587) | [`models/deeplabv3.py`](models/deeplabv3.py) |
 | RetinaNet (ResNet-50 FPN) | 2017 | 37,968,692 | [Focal Loss for Dense Object Detection](https://arxiv.org/abs/1708.02002) | [`models/retinanet.py`](models/retinanet.py) |
 | Mask R-CNN (ResNet-50 FPN) | 2017 | 44,400,693 | [Mask R-CNN](https://arxiv.org/abs/1703.06870) | [`models/mask_rcnn.py`](models/mask_rcnn.py) |
+| PointNet | 2017 | Config-dependent | [PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation](https://arxiv.org/abs/1612.00593) | [`models/pointnet.py`](models/pointnet.py) |
 | MobileNetV2 | 2018 | 3,504,872 | [MobileNetV2: Inverted Residuals and Linear Bottlenecks](https://arxiv.org/abs/1801.04381) | [`models/mobilenet_v2.py`](models/mobilenet_v2.py) |
+| DeepLabV3+ | 2018 | Config-dependent | [Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation](https://arxiv.org/abs/1802.02611) | [`models/deeplabv3_plus.py`](models/deeplabv3_plus.py) |
+| SimpleBaseline Pose | 2018 | Config-dependent | [Simple Baselines for Human Pose Estimation and Tracking](https://arxiv.org/abs/1804.06208) | [`models/simple_baseline_pose.py`](models/simple_baseline_pose.py) |
 | EfficientNet-B0 | 2019 | 5,288,548 | [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/abs/1905.11946) | [`models/efficientnet_b0.py`](models/efficientnet_b0.py) |
+| MobileNetV3-Small | 2019 | Config-dependent | [Searching for MobileNetV3](https://arxiv.org/abs/1905.02244) | [`models/mobilenet_v3_small.py`](models/mobilenet_v3_small.py) |
+| HRNet Pose | 2019 | Config-dependent | [Deep High-Resolution Representation Learning for Human Pose Estimation](https://arxiv.org/abs/1902.09212) | [`models/hrnet_pose.py`](models/hrnet_pose.py) |
 | ViT-B/16 | 2020 | 86,567,656 | [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929) | [`models/vit_b16.py`](models/vit_b16.py) |
+| MoCo | 2020 | Encoder-dependent | [Momentum Contrast for Unsupervised Visual Representation Learning](https://arxiv.org/abs/1911.05722) | [`models/moco.py`](models/moco.py) |
+| SimCLR | 2020 | Encoder-dependent | [A Simple Framework for Contrastive Learning of Visual Representations](https://arxiv.org/abs/2002.05709) | [`models/simclr.py`](models/simclr.py) |
+| DETR | 2020 | Config-dependent | [End-to-End Object Detection with Transformers](https://arxiv.org/abs/2005.12872) | [`models/detr.py`](models/detr.py) |
+| BYOL | 2020 | Encoder-dependent | [Bootstrap Your Own Latent](https://arxiv.org/abs/2006.07733) | [`models/byol.py`](models/byol.py) |
 | DeiT-Base Distilled | 2021 | 87,338,192 | [Training data-efficient image transformers & distillation through attention](https://arxiv.org/abs/2012.12877) | [`models/deit_base_distilled.py`](models/deit_base_distilled.py) |
 | Swin Transformer-T | 2021 | 28,288,354 | [Swin Transformer: Hierarchical Vision Transformer using Shifted Windows](https://arxiv.org/abs/2103.14030) | [`models/swin_t.py`](models/swin_t.py) |
+| CLIP-style Image-Text Model | 2021 | Config-dependent | [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020) | [`models/clip.py`](models/clip.py) |
+| DINO | 2021 | Config-dependent | [Emerging Properties in Self-Supervised Vision Transformers](https://arxiv.org/abs/2104.14294) | [`models/dino.py`](models/dino.py) |
 | ConvNeXt-Tiny | 2022 | 28,589,128 | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | [`models/convnext_tiny.py`](models/convnext_tiny.py) |
 
 ---
@@ -114,15 +127,16 @@ Each model file includes a small runnable check so the architecture can be insta
 
 The repository is expanding beyond image classification into the major branches of modern computer vision:
 
-- **Modern backbones:** MobileNetV3, SENet, Xception, ShuffleNet, RegNet
-- **Semantic segmentation:** SegNet, PSPNet, DeepLabV3+
-- **Object detection:** DETR, later YOLO generations
-- **Human pose:** SimpleBaseline, HRNet, OpenPose-style methods, 3D human understanding
-- **Self-supervised learning:** SimCLR, MoCo, BYOL, DINO
-- **Vision-language learning:** CLIP-style image-text representation learning and multimodal vision
+- **Modern backbones:** MobileNetV3 ✓; next SENet, Xception, ShuffleNet, RegNet
+- **Semantic segmentation:** DeepLabV3+ ✓; next SegNet and PSPNet
+- **Object detection:** DETR ✓; next later YOLO generations and deformable attention detectors
+- **Human pose:** SimpleBaseline ✓, HRNet ✓; next OpenPose-style methods and 3D human understanding
+- **Metric learning:** Siamese and triplet-learning references ✓; next stronger retrieval/embedding objectives
+- **Self-supervised learning:** SimCLR ✓, MoCo ✓, BYOL ✓, DINO ✓
+- **Vision-language learning:** CLIP-style image-text representation learning ✓; next multimodal fusion and grounded VLM components
 - **Generative vision:** Autoencoders, VAE, DCGAN, Pix2Pix, CycleGAN
 - **Video and motion:** optical flow, tracking, temporal vision models
-- **3D vision:** PointNet-family methods, depth, geometry, and human-centric 3D vision
+- **3D vision:** PointNet ✓; next PointNet-family extensions, depth, geometry, and human-centric 3D vision
 
 ---
 
