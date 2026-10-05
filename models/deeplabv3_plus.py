@@ -76,7 +76,7 @@ class DeepLabV3Plus(nn.Module):
 
 if __name__ == "__main__":
     model = DeepLabV3Plus(num_classes=21)
-    x = torch.randn(1, 3, 256, 256)
+    x = torch.randn(2, 3, 256, 256)
     y = model(x)
     print("output:", tuple(y.shape))
     print("parameters:", sum(p.numel() for p in model.parameters()))
